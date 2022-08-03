@@ -1,3 +1,4 @@
+//definições de cores da aplicação
 export const colors = {
     primaryColor: '#6CEA69',
     secondaryColor: '#E26B6B',
