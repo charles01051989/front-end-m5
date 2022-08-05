@@ -55,3 +55,30 @@ export const BoxLoginLogoText = styled.h1`
       0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
   `}
 `;
+
+export const BoxLoginLogoImage = styled.img`
+  ${() => css`
+  	width: 45%;
+  `}
+`;
+
+export const BoxLoginForm = styled.form`
+  ${({ theme }) => css`
+  	display: flex;
+  	flex-direction: column;
+  	gap: 15px;
+  	input {
+  		${theme.mixins.input()};
+  		color: ${theme.colors.textColor};
+  	}
+  `}
+`;
+
+export const BoxLoginError = styled.span`
+  ${({ theme }) => css`
+  	color: ${theme.colors.secondaryColor};
+  	text-align: center;
+  	display: inline-block;
+  	margin-top: 25px;
+  `}
+`;
