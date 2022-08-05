@@ -4,6 +4,7 @@ import Menu from "components/Menu";
 import { RoutePath } from "types/routes";
 import { navigationItems } from "data/navigation";
 import { DateTime } from "luxon";
+import GameItemList from "components/GameItemList";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
@@ -27,12 +28,12 @@ const Home = () => {
           </S.HomeHeaderDetails>
         </header>
         <div>
-          <S.HomeProductTitle>
+          <S.HomeGameTitle>
             <b>Games</b>
-          </S.HomeProductTitle>
-          <S.HomeProductList>
-            <p>Lista de games aqui</p>
-          </S.HomeProductList>
+          </S.HomeGameTitle>
+          <S.HomeGameList>
+          <GameItemList></GameItemList>
+          </S.HomeGameList>
         </div>
       </S.HomeContent>
       <aside>

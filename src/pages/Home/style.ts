@@ -62,7 +62,7 @@ export const HomeHeaderDetailsSearch = styled.div`
   `}
 `;
 
-export const HomeProductTitle = styled.h2`
+export const HomeGameTitle = styled.h2`
   ${({ theme }) => css`
     margin: 0;
     border-bottom: 1px solid ${theme.colors.baseLine};
@@ -85,14 +85,14 @@ export const HomeProductTitle = styled.h2`
   `}
 `;
 
-export const HomeProductList = styled.div`
+export const HomeGameList = styled.div`
   ${() => css`
     margin-top: 25px;
     padding-bottom: 25px;
   `}
 `;
 
-export const HomeProductListGap = styled.div`
+export const HomeGameListGap = styled.div`
   ${({ theme }) => css`
     width: 200px;
   `}
