@@ -5,6 +5,8 @@ import { RoutePath } from "types/routes";
 import { navigationItems } from "data/navigation";
 import { DateTime } from "luxon";
 import GameItemList from "components/GameItemList";
+import GameItem from "components/GameItem";
+import FavoriteDetails from "components/FavoriteDetails";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
@@ -32,12 +34,14 @@ const Home = () => {
             <b>Games</b>
           </S.HomeGameTitle>
           <S.HomeGameList>
-          <GameItemList></GameItemList>
+          <GameItemList>
+            <GameItem/>
+          </GameItemList>
           </S.HomeGameList>
         </div>
       </S.HomeContent>
       <aside>
-        <p>Detalhes dos games aqui</p>
+        <FavoriteDetails/>
       </aside>
     </S.Home>
   );
