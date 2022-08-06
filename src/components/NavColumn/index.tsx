@@ -24,7 +24,7 @@ const NavColumn = ({ activeRoute }: NavColumnProps) => {
       icon: <Info />,
       title: "Gerenciar Produtos",
       subtitle: "Edite os pratos, preços e etc.",
-      navigation: RoutePath.SETTINGS_PRODUCTS,
+      navigation: RoutePath.SETTINGS_GAMES,
     },
     {
       icon: <Users />,
