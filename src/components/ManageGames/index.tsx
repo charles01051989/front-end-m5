@@ -1,4 +1,5 @@
 import { ReactComponent as Add } from "assets/icons/add.svg";
+import EditGame from "components/EditGame";
 import { HTMLAttributes } from "react";
 import * as S from "./style";
 
@@ -9,14 +10,14 @@ type ManageGamesProps = {} & ManageGamesType;
 const ManageGames = ({ ...props }: ManageGamesProps) => {
   return (
     <S.ManageGames {...props}>
-      <S.ManageGamesTitle>Gerenciar Produtos</S.ManageGamesTitle>
+      <S.ManageGamesTitle>Gerenciar Games</S.ManageGamesTitle>
       <S.ManageGamesSub>
-        <b>Pizzas</b>
+        <b>Games</b>
       </S.ManageGamesSub>
       <S.ManageGamesContent>
         <S.ManageGamesContentAdd>
           <Add />
-          <span>Adicionar Pizza</span>
+          <span>Adicionar Game</span>
         </S.ManageGamesContentAdd>
         <S.AddCard>
           <S.EditForm type="text" placeholder="Título" />
@@ -24,13 +25,11 @@ const ManageGames = ({ ...props }: ManageGamesProps) => {
           <S.EditForm type="text" placeholder="Descrição" />
           <S.EditForm type="url" placeholder="Imagem" />
         </S.AddCard>
-        {"Componente EditProduct"}
+        <EditGame />
       </S.ManageGamesContent>
       <S.ManageGamesActions>
         <S.ManageGamesActionsCancel>Cancelar</S.ManageGamesActionsCancel>
-        <S.ManageGamesActionsSave>
-          Salvar Mudanças
-        </S.ManageGamesActionsSave>
+        <S.ManageGamesActionsSave>Salvar Mudanças</S.ManageGamesActionsSave>
       </S.ManageGamesActions>
     </S.ManageGames>
   );
