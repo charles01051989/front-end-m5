@@ -1,6 +1,7 @@
 import { HTMLAttributes } from "react";
 import { ReactComponent as Add } from "assets/icons/add.svg";
 import * as S from "./style";
+import EditGenre from "components/EditGenre";
 
 type ManageGenresType = HTMLAttributes<HTMLDivElement>;
 
@@ -22,7 +23,7 @@ const ManageGenres = ({ ...props }: ManageGenresProps) => {
           <label htmlFor="tableId">Número da Mesa</label>
           <S.EditForm id="tableId" type="number" placeholder="01" />
         </S.ManageGenresContentAdd>
-        {"Componente EditTable"}
+        <EditGenre/>
       </S.ManageGenresContent>
       <S.ManageGenresActions>
         <S.ManageGenresActionsCancel>Cancelar</S.ManageGenresActionsCancel>
