@@ -3,6 +3,6 @@ export enum RoutePath {
     LOGIN = '/login',
     SETTINGS = '/settings',
     SETTINGS_GAMES = 'games',
-    SETTINGS_TABLES = 'tables',
+    SETTINGS_GENRES = 'genres',
     SETTINGS_USERS = 'users',
   }
