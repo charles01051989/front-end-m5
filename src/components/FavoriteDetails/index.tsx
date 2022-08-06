@@ -1,5 +1,6 @@
 import * as S from "./style";
 import FavoriteItemList from "components/FavoriteItemList";
+import FavoriteItem from "components/FavoriteItem";
 
 const FavoriteDetails = () => {
   return (
@@ -15,7 +16,7 @@ const FavoriteDetails = () => {
               <h4>Preço</h4>
             </S.FavoriteDetailsListTitle>
           }
-          list = {"Lista de Games"}
+          list = {<FavoriteItem/>}
           footer={
             <S.FavoriteDetailsListFooter>
               <S.FavoriteDetailsListFooterRow>
