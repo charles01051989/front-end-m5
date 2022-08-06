@@ -7,6 +7,7 @@ import { DateTime } from "luxon";
 import GameItemList from "components/GameItemList";
 import GameItem from "components/GameItem";
 import FavoriteDetails from "components/FavoriteDetails";
+import Overlay from "components/Overlay";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
@@ -43,6 +44,9 @@ const Home = () => {
       <aside>
         <FavoriteDetails/>
       </aside>
+      {/* <Overlay>
+
+      </Overlay> */}
     </S.Home>
   );
 };
