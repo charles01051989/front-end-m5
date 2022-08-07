@@ -8,21 +8,32 @@ import GameItemList from "components/GameItemList";
 import GameItem from "components/GameItem";
 import FavoriteDetails from "components/FavoriteDetails";
 import Overlay from "components/Overlay";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
     ...DateTime.DATETIME_SHORT,
     weekday: "long",
   });
+  const navigate = useNavigate()
+  const handleNavigation = (path: RoutePath) => navigate(path);
+
   return (
     <S.Home>
-      <Menu active={RoutePath.HOME} navItems={navigationItems} />
+      <Menu 
+        active={RoutePath.HOME} 
+        navItems={navigationItems}
+        onNavigate={handleNavigation}
+        onLogout={() => navigate(RoutePath.LOGIN)}
+        />
       <S.HomeContent>
         <header>
           <S.HomeHeaderDetails>
             <div>
               <S.HomeHeaderDetailsLogo>Best Games</S.HomeHeaderDetailsLogo>
-              <S.HomeHeaderDetailsDate>{dateDescription}</S.HomeHeaderDetailsDate>
+              <S.HomeHeaderDetailsDate>
+                {dateDescription}
+              </S.HomeHeaderDetailsDate>
             </div>
             <S.HomeHeaderDetailsSearch>
               <Search />
@@ -35,14 +46,14 @@ const Home = () => {
             <b>Games</b>
           </S.HomeGameTitle>
           <S.HomeGameList>
-          <GameItemList>
-            <GameItem/>
-          </GameItemList>
+            <GameItemList>
+              <GameItem />
+            </GameItemList>
           </S.HomeGameList>
         </div>
       </S.HomeContent>
       <aside>
-        <FavoriteDetails/>
+        <FavoriteDetails />
       </aside>
       {/* <Overlay>
 
