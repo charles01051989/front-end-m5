@@ -1,19 +1,35 @@
 import * as S from "./style";
 import { ReactComponent as Trash } from "assets/icons/trash.svg"
+import { ButtonHTMLAttributes, useState } from "react";
+import { GameResponse } from "types/Game";
 
-const FavoriteItem = () => {
+type DivType = ButtonHTMLAttributes<HTMLDivElement>
+
+export type FavoriteItemProps = {
+  game: GameResponse;
+  quantity: number;
+  observation?: string;
+}
+
+const FavoriteItem = ({
+  game,
+  quantity,
+  observation = "",
+  ...props
+}: FavoriteItemProps) => {
+  const [quantityState, setQuantityState] = useState(quantity)
   return (
-    <S.FavoriteItem>
+    <S.FavoriteItem {...props} role="listitem" >
       <S.FavoriteItemLeft>
         <S.FavoriteItemLeftTop>
           <S.FavoriteItemGame>
-            <S.FavoriteItemGameImage src="" alt="Game?..." />
+            <S.FavoriteItemGameImage src={game.image} alt={game.name} />
             <S.FavoriteItemGameDetails>
               <S.FavoriteItemGameDetailsName>
-                Nome do Game
+                {game.name}
               </S.FavoriteItemGameDetailsName>
               <S.FavoriteItemGameDetailsPrice>
-                Preço do Game
+                 {game.price}
               </S.FavoriteItemGameDetailsPrice>
             </S.FavoriteItemGameDetails>
           </S.FavoriteItemGame>

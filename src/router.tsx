@@ -12,11 +12,11 @@ const Router = () => {
         <Routes>
             <Route path={RoutePath.LOGIN} element={<Login/>} />
             <Route path={RoutePath.HOME} element={<Home />} />
-            <Route path={RoutePath.SETTINGS} element={<Settings/>} >
+            <Route path={RoutePath.SETTINGS} element={<Settings/>} />
                 <Route path={ RoutePath.SETTINGS_GENRES } element= { <ManageGenres/> } />
                 <Route path={RoutePath.SETTINGS_GAMES} element={<ManageGames />} />
                 <Route path={RoutePath.SETTINGS_USERS} element={<ManageUsers />} />
-                </Route>
+                {/* </Route> */}
         </Routes>
     );
 }

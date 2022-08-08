@@ -107,6 +107,10 @@ const select = (important = true) => css`
   background-position: 85%;
 `;
 
+const backgroundImage = () => css`
+background-image: url(https://static.vecteezy.com/system/resources/previews/002/849/022/non_2x/simple-dark-abstract-with-hexagonal-steel-modern-background-editable-design-vector.jpg);
+`;
+
 export const mixins = {
   bodyStyle,
   buttonFilled,
@@ -118,4 +122,5 @@ export const mixins = {
   logoStyle,
   overlay,
   select,
+  backgroundImage,
 };

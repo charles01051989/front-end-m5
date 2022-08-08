@@ -1,8 +1,16 @@
 import * as S from "./style";
 import FavoriteItemList from "components/FavoriteItemList";
 import FavoriteItem from "components/FavoriteItem";
+import { HTMLAttributes } from "react";
+import { FavoriteItemType } from "types/FavoriteItemType";
 
-const FavoriteDetails = () => {
+type FavoriteDetailsType = HTMLAttributes<HTMLDivElement>;
+
+type FavoiteDetailsProps = {
+  favorites: FavoriteItemType[];
+} & FavoriteDetailsType;
+
+const FavoriteDetails = ({ favorites }: FavoiteDetailsProps ) => {
   return (
     <S.FavoriteDetails>
       <S.FavoriteDetailsTitle>Detalhes dos favoritos</S.FavoriteDetailsTitle>
@@ -11,17 +19,27 @@ const FavoriteDetails = () => {
         <FavoriteItemList
           header={
             <S.FavoriteDetailsListTitle>
-              <h4>Item</h4>
-              <h4>Qtd</h4>
-              <h4>Preço</h4>
+              <h4>Game</h4>
+              {/* <h4>Qtd</h4> */}
+              <h4>Ano</h4>
             </S.FavoriteDetailsListTitle>
           }
-          list = {<FavoriteItem/>}
+          list = {
+            Boolean(favorites.length) ? (favorites.map((item, index) => (
+              <FavoriteItem
+              game={item.game}
+              quantity={item.quantity}
+              observation={item.observation}
+              key={`FavoriteDetails-${index}`}
+              />
+            ))
+            ):(<S.FavoriteDetailsListGap/>)
+          }
           footer={
             <S.FavoriteDetailsListFooter>
               <S.FavoriteDetailsListFooterRow>
-                <span>Subtotal</span>
-                <span>R$ 10.00</span>
+                {/* <span>Subtotal</span>
+                <span>R$ 10.00</span> */}
               </S.FavoriteDetailsListFooterRow>
             </S.FavoriteDetailsListFooter>
             }

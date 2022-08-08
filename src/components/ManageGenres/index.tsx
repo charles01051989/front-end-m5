@@ -10,17 +10,17 @@ type ManageGenresProps = {} & ManageGenresType;
 const ManageGenres = ({ ...props }: ManageGenresProps) => {
   return (
     <S.ManageGenres {...props}>
-      <S.ManageGenresTitle>Gerenciar Mesas</S.ManageGenresTitle>
+      <S.ManageGenresTitle>Gerenciar Gêneros</S.ManageGenresTitle>
       <S.ManageGenresSub>
-        <b>Mesas</b>
+        <b>Gêneros</b>
       </S.ManageGenresSub>
       <S.ManageGenresContent>
         <S.ManageGenresContentAdd>
           <Add />
-          <span>Adicionar mesa</span>
+          <span>Adicionar gêneros</span>
         </S.ManageGenresContentAdd>
         <S.ManageGenresContentAdd>
-          <label htmlFor="tableId">Número da Mesa</label>
+          <label htmlFor="tableId"></label>
           <S.EditForm id="tableId" type="number" placeholder="01" />
         </S.ManageGenresContentAdd>
         <EditGenre/>
