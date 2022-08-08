@@ -9,7 +9,7 @@ export const favorites: FavoriteItemType[] = [
 		image:       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_2pmtFvUQINjvqMER4B8Vi2PzrVD1Yt4CWF7K3nnPNyohXW5nOr357skoloT_wirLeyI&usqp=CAU',
 		price:       1992,
 		},
-		quantity: 1,
+		
 		observation: '',
 	},
 	{
@@ -20,7 +20,7 @@ export const favorites: FavoriteItemType[] = [
 		image:       'https://bdjogos.com.br/capas/702-final-fight-2-super-nintendo-capa-1.jpg',
 		price:       1989,
 		},
-		quantity: 3,
+		
 		observation: '',
 	},
 	{
@@ -31,7 +31,7 @@ export const favorites: FavoriteItemType[] = [
 		image:       'https://jumpersroms.files.wordpress.com/2020/04/killer-intinct-snes.jpg?w=940',
 		price:       1994,
 		},
-		quantity: 2,
+		
 		observation: '',
 	},
 ];

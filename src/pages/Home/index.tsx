@@ -11,25 +11,36 @@ import Overlay from "components/Overlay";
 import { useNavigate } from "react-router-dom";
 import { GameResponse } from "types/Game";
 import { games } from "mocks/games";
-import { favorites } from "mocks/favorites";
+import { FavoriteItemType } from "types/FavoriteItemType";
+import { useState } from "react";
+// import { favorites } from "mocks/favorites";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
     ...DateTime.DATETIME_SHORT,
     weekday: "long",
   });
-  const navigate = useNavigate()
+  const [favorites, setFavorites] = useState<FavoriteItemType[]>([]);
+  const navigate = useNavigate();
   const handleNavigation = (path: RoutePath) => navigate(path);
-  const handleSelection = (game: GameResponse) => {};
+
+  const handleSelection = (game: GameResponse) => {
+    const existing = favorites.find((i) => i.game.id === game.id);
+    const item: FavoriteItemType = {game}
+
+    const list = existing ? favorites.map((i) => (i.game.id === existing.game.id ? item: i))
+    : [...favorites, item];
+    setFavorites(list)
+  };
 
   return (
     <S.Home>
-      <Menu 
-        active={RoutePath.HOME} 
+      <Menu
+        active={RoutePath.HOME}
         navItems={navigationItems}
         onNavigate={handleNavigation}
         onLogout={() => navigate(RoutePath.LOGIN)}
-        />
+      />
       <S.HomeContent>
         <header>
           <S.HomeHeaderDetails>
@@ -51,11 +62,14 @@ const Home = () => {
           </S.HomeGameTitle>
           <S.HomeGameList>
             <GameItemList>
-              {Boolean(games.length) && games.map((game, index) => (<GameItem
-              game={game}
-              key={`GameItem-${index}`}
-              onSelect={handleSelection}
-              />))}
+              {Boolean(games.length) &&
+                games.map((game, index) => (
+                  <GameItem
+                    game={game}
+                    key={`GameItem-${index}`}
+                    onSelect={handleSelection}
+                  />
+                ))}
             </GameItemList>
           </S.HomeGameList>
         </div>

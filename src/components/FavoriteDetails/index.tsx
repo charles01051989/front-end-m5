@@ -27,11 +27,9 @@ const FavoriteDetails = ({ favorites }: FavoiteDetailsProps ) => {
           list = {
             Boolean(favorites.length) ? (favorites.map((item, index) => (
               <FavoriteItem
-              game={item.game}
-              quantity={item.quantity}
-              observation={item.observation}
-              key={`FavoriteDetails-${index}`}
-              />
+                game={item.game}
+                observation={item.observation}
+                key={`FavoriteDetails-${index}`}              />
             ))
             ):(<S.FavoriteDetailsListGap/>)
           }

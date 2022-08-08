@@ -7,17 +7,14 @@ type DivType = ButtonHTMLAttributes<HTMLDivElement>
 
 export type FavoriteItemProps = {
   game: GameResponse;
-  quantity: number;
   observation?: string;
 }
 
 const FavoriteItem = ({
   game,
-  quantity,
   observation = "",
   ...props
 }: FavoriteItemProps) => {
-  const [quantityState, setQuantityState] = useState(quantity)
   return (
     <S.FavoriteItem {...props} role="listitem" >
       <S.FavoriteItemLeft>
