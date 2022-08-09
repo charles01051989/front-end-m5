@@ -8,11 +8,13 @@ type DivType = ButtonHTMLAttributes<HTMLDivElement>
 export type FavoriteItemProps = {
   game: GameResponse;
   observation?: string;
+  onRemoveItem?: () => void;
 }
 
 const FavoriteItem = ({
   game,
   observation = "",
+  onRemoveItem,
   ...props
 }: FavoriteItemProps) => {
   return (
@@ -34,7 +36,7 @@ const FavoriteItem = ({
         </S.FavoriteItemLeftTop>
       </S.FavoriteItemLeft>
       <S.FavoriteItemRight>
-        <S.FavoriteItemRightTrash>
+        <S.FavoriteItemRightTrash onClick={onRemoveItem}>
             <Trash/>
         </S.FavoriteItemRightTrash>
       </S.FavoriteItemRight>

@@ -32,7 +32,10 @@ const Home = () => {
     : [...favorites, item];
     setFavorites(list)
   };
-
+  const handleRemoveFavoriteItem = (id: string) => {
+    const filtered = favorites.filter( (i) => i.game.id !== id );
+    setFavorites(filtered)
+  }
   return (
     <S.Home>
       <Menu
@@ -75,7 +78,9 @@ const Home = () => {
         </div>
       </S.HomeContent>
       <aside>
-        <FavoriteDetails favorites={favorites} />
+        <FavoriteDetails 
+        favorites={favorites}
+        onRemoveItem={handleRemoveFavoriteItem} />
       </aside>
       {/* <Overlay>
 

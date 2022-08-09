@@ -8,9 +8,10 @@ type FavoriteDetailsType = HTMLAttributes<HTMLDivElement>;
 
 type FavoiteDetailsProps = {
   favorites: FavoriteItemType[];
+  onRemoveItem:(id: string) => void
 } & FavoriteDetailsType;
 
-const FavoriteDetails = ({ favorites }: FavoiteDetailsProps ) => {
+const FavoriteDetails = ({ favorites, onRemoveItem }: FavoiteDetailsProps ) => {
   return (
     <S.FavoriteDetails>
       <S.FavoriteDetailsTitle>Detalhes dos favoritos</S.FavoriteDetailsTitle>
@@ -27,6 +28,7 @@ const FavoriteDetails = ({ favorites }: FavoiteDetailsProps ) => {
           list = {
             Boolean(favorites.length) ? (favorites.map((item, index) => (
               <FavoriteItem
+                onRemoveItem={() => onRemoveItem(item.game.id) }
                 game={item.game}
                 observation={item.observation}
                 key={`FavoriteDetails-${index}`}              />
