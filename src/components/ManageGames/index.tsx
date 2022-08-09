@@ -21,7 +21,7 @@ const ManageGames = ({ ...props }: ManageGamesProps) => {
         </S.ManageGamesContentAdd>
         <S.AddCard>
           <S.EditForm type="text" placeholder="Título" />
-          <S.EditForm type="number" placeholder="Preço" />
+          <S.EditForm type="number" placeholder="Ano" />
           <S.EditForm type="text" placeholder="Descrição" />
           <S.EditForm type="url" placeholder="Imagem" />
         </S.AddCard>

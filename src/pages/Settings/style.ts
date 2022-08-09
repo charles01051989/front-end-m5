@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import pattern from "assets/imgs/pizza-pattern.png"
 export const Settings = styled.section`
   ${({ theme }) => css`
-    background-color: ${theme.colors.baseBg1};
+    background-color: ${theme.colors.primaryColor};
     background-image: url(${pattern});
     min-width: 100vw;
     min-height: 100vh;

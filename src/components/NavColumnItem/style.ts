@@ -3,7 +3,7 @@ import { Theme } from "types/styled-components";
 
 const NavColumnItemModifiers = {
   active: (theme: Theme) => css`
-    background: ${theme.colors.primaryColorOpacity};
+    background: ${theme.colors.primaryColor};
     position: relative;
     &::after {
       content: "";
@@ -13,7 +13,7 @@ const NavColumnItemModifiers = {
       transform: translateY(50%);
       width: 4px;
       height: 50%;
-      background-color: #6cea69;
+      background-color: #D7838D;
       border-radius: 5rem;
     }
   `,

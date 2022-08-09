@@ -6,7 +6,7 @@ const EditGenre = () => {
     <S.EditGenre>
       <>
         <S.EditGenreDetails>
-          <S.EditGenreDetailsName>abcd</S.EditGenreDetailsName>
+          <S.EditGenreDetailsName>Action</S.EditGenreDetailsName>
         </S.EditGenreDetails>
         <S.EditGenreAction>
           <Pencil /> Editar
@@ -15,7 +15,7 @@ const EditGenre = () => {
 
       <>
         <label htmlFor="tableId"></label>
-        <S.EditForm id="tableId" type="number" placeholder="01" />
+        <S.EditForm id="tableId"  placeholder="" />
         <S.Deletar>Deletar gênero</S.Deletar>
       </>
     </S.EditGenre>

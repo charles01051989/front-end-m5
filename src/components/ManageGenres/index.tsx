@@ -19,10 +19,10 @@ const ManageGenres = ({ ...props }: ManageGenresProps) => {
           <Add />
           <span>Adicionar gêneros</span>
         </S.ManageGenresContentAdd>
-        <S.ManageGenresContentAdd>
+        {/* <S.ManageGenresContentAdd>
           <label htmlFor="tableId"></label>
-          <S.EditForm id="tableId" type="number" placeholder="01" />
-        </S.ManageGenresContentAdd>
+          <S.EditForm id="tableId"  placeholder="01" />
+        </S.ManageGenresContentAdd> */}
         <EditGenre/>
       </S.ManageGenresContent>
       <S.ManageGenresActions>
