@@ -11,7 +11,8 @@ const GameItem = ({ game, onSelect}: GameItemProps) => {
     <S.GameItemImage src={game.image} alt={`${game.name}`} />
     <div>
   	<S.GameItemName>{game.name}</S.GameItemName>
-  	<S.GameItemPrice>{game.price}</S.GameItemPrice>
+  	<S.GameItemPrice>{game.year}</S.GameItemPrice>
+    <S.GameItemGenre>{game.genre}</S.GameItemGenre>
   	<S.GameItemDescription>{game.description}</S.GameItemDescription>
   </div>
   </S.GameItem>

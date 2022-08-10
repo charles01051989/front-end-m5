@@ -34,7 +34,7 @@ export const HomeHeaderDetails = styled.div`
 export const HomeHeaderDetailsLogo = styled.h1`
   ${({ theme }) => css`
     ${theme.mixins.logoStyle};
-    text-transform: uppercase;
+    
     margin: 0;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff1177,
       0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;

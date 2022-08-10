@@ -3,5 +3,6 @@ export interface GameResponse {
     name: string;
     description: string;
     image: string;
-    price: number;
+    year: number;
+    genre: string;
   }

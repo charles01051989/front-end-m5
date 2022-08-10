@@ -48,7 +48,7 @@ const Home = () => {
         <header>
           <S.HomeHeaderDetails>
             <div>
-              <S.HomeHeaderDetailsLogo>Best Games</S.HomeHeaderDetailsLogo>
+              <S.HomeHeaderDetailsLogo>90's Games</S.HomeHeaderDetailsLogo>
               <S.HomeHeaderDetailsDate>
                 {dateDescription}
               </S.HomeHeaderDetailsDate>

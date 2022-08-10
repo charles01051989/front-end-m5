@@ -28,7 +28,7 @@ const FavoriteItem = ({
                 {game.name}
               </S.FavoriteItemGameDetailsName>
               <S.FavoriteItemGameDetailsPrice>
-                 {game.price}
+                 {game.year}
               </S.FavoriteItemGameDetailsPrice>
             </S.FavoriteItemGameDetails>
           </S.FavoriteItemGame>

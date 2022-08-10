@@ -7,7 +7,7 @@ export const GameItem = styled.div`
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		gap: 15px;
+		gap: 10px;
 		align-items: center;
 		max-width: 200px;
 		width: 100%;
@@ -18,7 +18,7 @@ export const GameItem = styled.div`
 			flex-direction: column;
 			justify-content: space-around;
 			align-items: center;
-			gap: 10px;
+			gap: 1px;
 		}
 	`}
 `;
@@ -56,5 +56,15 @@ export const GameItemDescription = styled.small`
 		max-width: 90%;
 		margin: 0;
 		font-size: 12px;
+	`}
+`;
+
+export const GameItemGenre = styled.strong`
+	${({ theme }) => css`
+		${theme.mixins.bodyStyle()}
+		text-align: center;
+		max-width: 90%;
+		margin: 0;
+		color: ${theme.colors.textColor};
 	`}
 `;

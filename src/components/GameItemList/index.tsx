@@ -8,7 +8,7 @@ const GameItemList = ({ children }: GameItemListProps) => {
     <section>
       <S.GameItemListHeader>
         <S.GameItemListHeaderTitle>
-          Escolha os games
+          Adicione os games a lista de favoritos
         </S.GameItemListHeaderTitle>
         {/* <S.GameItemListHeaderSelect>
             <option value="default">Selecione a mesa</option>
