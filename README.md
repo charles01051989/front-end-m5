@@ -1,3 +1,26 @@
+Front-end application project under implementation.
+
+Guidelines for running the project.
+
+Cloning the repository.
+
+1- Click on the repository link.
+
+2- Above the list of files, click option Code.
+
+3- To clone the repository using HTTPS,
+
+4- Open the terminal.
+
+5- Change the current working directory to the location where you want to have the directory cloned.
+
+6-Type git clone (clone git) and paste the URL you copied earlier.
+
+7-Press Enter to create your local clone.
+
+8-Open the terminal in the project folder and run "cd app"
+
+9-Run "yarn start"
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
