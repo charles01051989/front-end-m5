@@ -2,11 +2,11 @@ export interface Game {
     name: string;
     description: string;
     image: string;
-    price: number;
+    year: number;
   }
   
   export interface GameUpdate {
-    product: Game;
+    game: Game;
     id: string;
   }
   
@@ -15,7 +15,7 @@ export interface Game {
     name: string;
     description: string;
     image: string;
-    price: number;
+    year: number;
     updatedAt?: string;
     createdAt?: string;
   }
