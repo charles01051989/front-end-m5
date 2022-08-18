@@ -1,6 +1,6 @@
 import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import { RoutePath } from "types/routes";
-import Home from "./pages/Home/index";
+import Home from "pages/Home/index";
 import Login from "pages/Login";
 import Settings from "pages/Settings";
 import ManageGames from "components/ManageGames";

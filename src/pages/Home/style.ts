@@ -1,4 +1,4 @@
-import pattern from "assets/imgs/pizza-pattern.png"
+
 import styled, { css } from "styled-components";
 
 export const Home = styled.section`

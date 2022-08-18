@@ -89,7 +89,7 @@ const input = () => css`
   height: 48px;
   border-radius: 8px;
   padding: 14px;
-  background: ${colors.baseForm};
+  background: ${colors.baseBg1};
   border: 1px solid ${colors.baseLine};
   box-sizing: border-box;
 `;
