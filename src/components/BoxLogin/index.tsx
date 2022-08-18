@@ -6,16 +6,16 @@ import * as S from "./style";
 type BoxLoginType =  HTMLAttributes<HTMLDivElement>
 
 export type BoxLoginProps = {
-  onSubmitData: (data: {nickname: string, password: string}) => void
+  onSubmitData: (data: {name: string, password: string}) => void
   errorMessage: string
 } & BoxLoginType;
 
 const BoxLogin = ({onSubmitData, errorMessage}: BoxLoginProps) => {
-    const [nickname, setNickname] = useState('');
+    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (): void => {
-        const data = {nickname, password};
+        const data = {name, password};
         onSubmitData(data);
     }
     
@@ -23,7 +23,7 @@ const BoxLogin = ({onSubmitData, errorMessage}: BoxLoginProps) => {
         <S.BoxLogin>
             <S.BoxLoginLogo>
                 <S.BoxLoginLogoText>
-                    <span>Best</span>
+                    <span>90's</span>
                     <span>Games</span>
                 </S.BoxLoginLogoText>
                 <S.BoxLoginLogoImage src={logo} alt="Logo"/>
@@ -32,8 +32,8 @@ const BoxLogin = ({onSubmitData, errorMessage}: BoxLoginProps) => {
                 <input
                     type="text"
                     placeholder="Nickname"
-                    value={nickname}
-                    onChange={({target}) => setNickname(target.value)}
+                    value={name}
+                    onChange={({target}) => setName(target.value)}
                 />
 
                 <input
