@@ -16,6 +16,7 @@ export interface Game {
     description: string;
     image: string;
     year: number;
+    genre: string;
     updatedAt?: string;
     createdAt?: string;
   }

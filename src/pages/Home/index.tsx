@@ -9,7 +9,7 @@ import GameItem from "components/GameItem";
 import FavoriteDetails from "components/FavoriteDetails";
 import Overlay from "components/Overlay";
 import { useNavigate } from "react-router-dom";
-import { GameResponse } from "types/Game";
+import { GameResponse } from "types/api/game";
 import { FavoriteItemType } from "types/FavoriteItemType";
 import { useEffect, useState } from "react";
 import { GameService } from "services/GameService";
@@ -17,6 +17,7 @@ import { QueryKey } from "types/QueryKey";
 import { useQuery } from "@tanstack/react-query";
 import { GenreService } from "services/GenreService";
 import { Auth } from "helpers/Auth";
+import { matchByText } from "helpers/Utils";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
@@ -28,11 +29,16 @@ const Home = () => {
   const navigate = useNavigate();
 
   const { data: gamesData } = useQuery([QueryKey.GAMES], GameService.getLista);
-  const { data: genresData } = useQuery([QueryKey.GENRES], GenreService.getLista);
- 
+  const { data: genresData } = useQuery(
+    [QueryKey.GENRES],
+    GenreService.getLista
+  );
+
   const genres = genresData || [];
 
   const [games, setGames] = useState<GameResponse[]>([]);
+
+  const [filteredGames, setFilteredGames] = useState<GameResponse[]>([]);
 
   const handleNavigation = (path: RoutePath) => navigate(path);
 
@@ -49,9 +55,17 @@ const Home = () => {
     const filtered = favorites.filter((i) => i.game.id !== id);
     setFavorites(filtered);
   };
+
+  const handleFilter = ( title: string ) => {
+    const list = games.filter(({ name }) => matchByText( name, title ));
+    setFilteredGames(list);
+  }
+
   useEffect(() => {
-    setGames(gamesData || [])
+    setGames(gamesData || []);
+    setFilteredGames(gamesData || []);
   }, [gamesData]);
+
   return (
     <S.Home>
       <Menu
@@ -71,7 +85,10 @@ const Home = () => {
             </div>
             <S.HomeHeaderDetailsSearch>
               <Search />
-              <input type="text" placeholder="Procure pelo nome do game" />
+              <input 
+                type="text" 
+                placeholder="Procure pelo nome do game"
+                onChange={({target}) => handleFilter(target.value)} />
             </S.HomeHeaderDetailsSearch>
           </S.HomeHeaderDetails>
         </header>
@@ -82,7 +99,7 @@ const Home = () => {
           <S.HomeGameList>
             <GameItemList>
               {Boolean(games.length) &&
-                games.map((game, index) => (
+                filteredGames.map((game, index) => (
                   <GameItem
                     game={game}
                     key={`GameItem-${index}`}

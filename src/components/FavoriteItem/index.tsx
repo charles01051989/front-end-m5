@@ -1,7 +1,7 @@
 import * as S from "./style";
 import { ReactComponent as Trash } from "assets/icons/trash.svg"
 import { ButtonHTMLAttributes, useState } from "react";
-import { GameResponse } from "types/Game";
+import { GameResponse } from "types/api/game";
 
 type DivType = ButtonHTMLAttributes<HTMLDivElement>
 

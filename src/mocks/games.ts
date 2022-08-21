@@ -1,4 +1,4 @@
-import { GameResponse } from "types/Game";
+import { GameResponse } from "types/api/game";
 
 export const games: GameResponse[] = [
 	{
