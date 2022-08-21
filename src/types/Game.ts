@@ -4,5 +4,5 @@ export interface GameResponse {
     description: string;
     image: string;
     year: number;
-    genre: string;
+    genre?: string;
   }
