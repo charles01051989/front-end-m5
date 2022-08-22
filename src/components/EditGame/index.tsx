@@ -1,10 +1,14 @@
 import { ReactComponent as Pencil } from "assets/icons/edit.svg";
+import { GameResponse } from "types/api/game";
 
 
 import * as S from "./style";
 
+interface EditGameProps {
+    game: GameResponse;
+}
 
-const EditGame = () => {
+const EditGame = ({game}: EditGameProps) => {
     return (
         <S.EditGame>
             <>
