@@ -22,10 +22,10 @@ const FavoriteItem = ({
       <S.FavoriteItemLeft>
         <S.FavoriteItemLeftTop>
           <S.FavoriteItemGame>
-            <S.FavoriteItemGameImage src={game.image} alt={game.name} />
+            <S.FavoriteItemGameImage src={game.image} alt={game.title} />
             <S.FavoriteItemGameDetails>
               <S.FavoriteItemGameDetailsName>
-                {game.name}
+                {game.title}
               </S.FavoriteItemGameDetailsName>
               <S.FavoriteItemGameDetailsPrice>
                  {game.year}

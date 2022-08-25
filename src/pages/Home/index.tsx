@@ -57,7 +57,7 @@ const Home = () => {
   };
 
   const handleFilter = ( title: string ) => {
-    const list = games.filter(({ name }) => matchByText( name, title ));
+    const list = games.filter(({ title }) => matchByText( title, title ));
     setFilteredGames(list);
   }
 

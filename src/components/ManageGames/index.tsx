@@ -30,7 +30,7 @@ const ManageGames = ({ ...props }: ManageGamesProps) => {
   });
 
   const form = {
-    name: "",
+    title: "",
     year: Number(""),
     image: "",
     description: "",
@@ -39,20 +39,20 @@ const ManageGames = ({ ...props }: ManageGamesProps) => {
   const [isAdding, setIsAdding] = useState(false);
   const [gameToAdd, setGameToAdd] = useState(form);
 
-  const handleAddChange = (name: string, value: string | number) => {
-    setGameToAdd({ ...gameToAdd, [name]: value });
+  const handleAddChange = (title: string, value: string | number) => {
+    setGameToAdd({ ...gameToAdd, [title]: value });
   };
 
   const gameIsValid = () =>
     Boolean(
-      gameToAdd.name.length &&
+      gameToAdd.title.length &&
         gameToAdd.year.toString().length &&
         gameToAdd.description.length &&
         gameToAdd.image.length
     );
 
   const gameFormatter = (toFormat: typeof form): Game => ({
-    name: toFormat.name,
+    title: toFormat.title,
     year: toFormat.year,
     description: toFormat.description,
     image: toFormat.image,
@@ -97,9 +97,9 @@ const ManageGames = ({ ...props }: ManageGamesProps) => {
           <S.EditForm 
             type="text" 
             placeholder="Título"
-            success={Boolean(gameToAdd.name.length)}
-            value={gameToAdd.name}
-            onChange={ ({ target }) => handleAddChange("name", target.value) }
+            success={Boolean(gameToAdd.title.length)}
+            value={gameToAdd.title}
+            onChange={ ({ target }) => handleAddChange("title", target.value) }
             />
           <S.EditForm 
             type="number" 

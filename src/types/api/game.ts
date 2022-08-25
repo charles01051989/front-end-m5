@@ -1,5 +1,5 @@
 export interface Game {
-    name: string;
+    title: string;
     description: string;
     image: string;
     year: number;
@@ -12,7 +12,7 @@ export interface Game {
   
   export interface GameResponse {
     id: string;
-    name: string;
+    title: string;
     description: string;
     image: string;
     year: number;
